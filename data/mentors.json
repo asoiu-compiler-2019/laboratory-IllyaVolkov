@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "address": "Some random address",
+    "phone": "",
+    "about": "Some random information",
+    "created": "27.01.11",
+    "logged": "27.01.11"
+  },
+  {
+    "id": "2",
+    "address": "Some random address",
+    "phone": "",
+    "about": "Some random information",
+    "created": "27.01.11",
+    "logged": "27.01.11"
+  },
+  {
+    "id": "3",
+    "address": "Some random address",
+    "phone": "",
+    "about": "Some random information",
+    "created": "27.01.11",
+    "logged": "27.01.11"
+  },
+  {
+    "id": "4",
+    "address": "0660000000",
+    "phone": "",
+    "about": "Some random information",
+    "created": "27.01.11",
+    "logged": "27.01.11"
+  }
+]

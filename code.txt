@@ -1,0 +1,9 @@
+!connect: host("http://pro.boost.com").login("123").password("123");
+
+!mentors: get(id="123").set(address="321").set(phone="0660000000").save();
+          get(phone="0660000000", address="321").delete();
+          add(phone="0660000000").set(about="nothing").save();
+
+!users: get().min(created="27.01.11").max(created="27.02.11").print();
+        get().min(logged="27.01.11").print("users.txt");
+        add().max(about="nothing").count();

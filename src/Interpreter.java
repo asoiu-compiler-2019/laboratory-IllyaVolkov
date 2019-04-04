@@ -145,6 +145,7 @@ public class Interpreter extends ASTNodeVisitor {
         for (Pair<String, String> param: params) {
             query += MessageFormat.format("&{0}={1}", param.getKey(), param.getValue());
         }
+        System.out.println(method + ": " + query);
         switch (method) {
             case "GET": return API.GET(query);
             case "POST": return API.POST(query, data);

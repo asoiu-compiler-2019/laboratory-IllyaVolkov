@@ -1,5 +1,6 @@
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 
 enum ASTNodeType {
@@ -71,10 +72,24 @@ public class ASTNode {
     }
 
     public String toString() {
+        int level = 0;
         if (this.children == null) {
             return MessageFormat.format("\nLeaf node '{' type: {0}, value: {1}'}'", this.type, this.value);
         } else {
-            return MessageFormat.format("\nAbstract node '{' type: {0}, children: {1}'}'", this.type, this.children.toString());
+            return MessageFormat.format("\nAbstract node '{' type: {0}, children: {1}'}'", this.type, this.children.stream().map((ASTNode obj) -> obj.toString(level + 1)).collect(Collectors.toList()));
+        }
+    }
+
+    public String toString(int level) {
+        String formatChars = "\n";
+
+        for (int n = 0; n < level; n++) {
+            formatChars += "\t";
+        }
+        if (this.children == null) {
+            return MessageFormat.format("{2}Leaf node '{' type: {0}, value: {1}'}'", this.type, this.value, formatChars);
+        } else {
+            return MessageFormat.format("{2}Abstract node '{' type: {0}, children: {1}'}'", this.type, this.children.stream().map((ASTNode obj) -> obj.toString(level + 1)).collect(Collectors.toList()), formatChars);
         }
     }
 }
